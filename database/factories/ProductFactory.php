@@ -20,8 +20,8 @@ class ProductFactory extends Factory
             'name' => ucwords($this->faker->word),
             'description' => $this->faker->sentence,
             'image' => $this->faker->imageUrl,
-            'quantity' => 50,
-            'barcode' => $this->faker->unique()->ean13,
+            // 'quantity' => 50,
+            // 'barcode' => $this->faker->unique()->ean13,
             'regular_price' => $this->faker->randomFloat(2, 50, 200),
             'price' => $this->faker->randomFloat(2, 40, 190),
             'status' => true

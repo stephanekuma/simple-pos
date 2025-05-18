@@ -20,10 +20,10 @@ class Product extends Model
         'name',
         'description',
         'image',
-        'barcode',
+        // 'barcode',
         'price',
         'tax',
-        'quantity',
+        // 'quantity',
         'status',
     ];
 
@@ -45,10 +45,14 @@ class Product extends Model
      */
     public function getImageUrl(): string
     {
+        $url = '';
+
         if ($this->image) {
-            return Storage::url($this->image);
+            $url = Storage::url($this->image);
         }
 
-        return asset('images/placeholder.jpg');
+        dd($url);
+
+        return $url ?: asset('images/placeholder.jpg');
     }
 }
