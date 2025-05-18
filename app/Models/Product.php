@@ -45,14 +45,12 @@ class Product extends Model
      */
     public function getImageUrl(): string
     {
-        $url = '';
-
         if ($this->image) {
-            $url = Storage::url($this->image);
+            $path = Storage::disk('uploads')->url($this->image);
+
+            return $path;
         }
 
-        dd($url);
-
-        return $url ?: asset('images/placeholder.jpg');
+        return  asset('images/placeholder.jpg');
     }
 }

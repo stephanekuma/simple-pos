@@ -33,7 +33,7 @@ class OrderResource extends Resource
 
     public static function table(Table $table): Table
     {
-        $currencySymbol = config('settings.currency_symbol');
+        $currencySymbol = config('settings.currency_symbol', 'XOF');
 
         return $table
             ->columns([
@@ -45,7 +45,7 @@ class OrderResource extends Resource
                     ->searchable()
                     ->formatStateUsing(fn($record) => $record->customer->first_name . ' ' . $record->customer->last_name),
                 Tables\Columns\TextColumn::make('total_price')
-                    ->formatStateUsing(fn($record) => $currencySymbol . ' ' . $record->total_price)->sortable(),
+                    ->formatStateUsing(fn($record) => $record->total_price . ' ' . $currencySymbol)->sortable(),
                 // Tables\Columns\TextColumn::make('discount_price')
                 //     ->numeric()
                 //     ->sortable(),
