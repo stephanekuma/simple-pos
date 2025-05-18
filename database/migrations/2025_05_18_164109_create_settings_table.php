@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(table: 'customers', callback: static function (Blueprint $table): void {
+        Schema::create(table: 'settings', callback: static function (Blueprint $table): void {
             $table->id();
             $table->string(column: 'key')->unique();
             $table->text(column: 'value')->nullable();
