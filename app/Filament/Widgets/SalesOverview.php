@@ -4,12 +4,15 @@ namespace App\Filament\Widgets;
 
 use App\Models\Customer;
 use App\Models\Order;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 use Filament\Support\Enums\IconPosition;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class SalesOverview extends BaseWidget
 {
+    use HasWidgetShield;
+
     protected function getStats(): array
     {
         $currencySymbol = config('settings.currency_symbol');

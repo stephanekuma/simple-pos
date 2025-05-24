@@ -18,5 +18,11 @@ class UserSeeder extends Seeder
             'email' => 'admin@bokitgrill.online',
             'password' => bcrypt('password'),
         ]);
+
+        User::query()->create(attributes: [
+            'name' => 'Stéphane Kuma',
+            'email' => 'kumastephane@gmail.com',
+            'password' => bcrypt('super'),
+        ]);
     }
 }

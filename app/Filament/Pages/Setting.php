@@ -3,6 +3,7 @@
 namespace App\Filament\Pages;
 
 use App\Models\Setting as SettingModel;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -10,6 +11,8 @@ use Filament\Pages\Page;
 
 class Setting extends Page
 {
+    use HasPageShield;
+
     protected static ?string $navigationIcon = 'heroicon-o-cog';
 
     protected static ?int $navigationSort = 10;
