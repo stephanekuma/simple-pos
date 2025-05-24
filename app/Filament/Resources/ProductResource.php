@@ -66,6 +66,8 @@ class ProductResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $currencySymbol = config('settings.currency_symbol');
+
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
@@ -87,7 +89,7 @@ class ProductResource extends Resource
                 //     ->numeric()
                 //     ->sortable(),
                 Tables\Columns\TextColumn::make('price')
-                    ->money()
+                    ->suffix(" $currencySymbol")
                     ->sortable(),
                 // Tables\Columns\TextColumn::make('quantity')
                 //     ->numeric()
