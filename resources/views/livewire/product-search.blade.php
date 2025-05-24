@@ -29,7 +29,7 @@
                 </div>
 
                 <img src="{{ $product->getImageUrl() }}" alt="{{ $product->name }}"
-                    class="object-contain max-h-full bg-white dark:bg-gray-800">
+                    class="w-full h-32 object-cover bg-white dark:bg-gray-800" />
                 <p class="text-gray-800 dark:text-gray-100 p-2 text-sm">{{ $product->name }}</p>
                 <p class="text-gray-700 dark:text-gray-300 p-2 pt-0 text-md">
                     {{ $product->price . ' ' . $currencySymbol }}</p>

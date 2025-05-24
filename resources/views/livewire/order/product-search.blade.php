@@ -29,7 +29,7 @@
                     </div>
 
                     <img src="{{ $product->getImageUrl() }}" alt="{{ $product->name }}"
-                        class="object-contain max-h-32 w-full bg-white dark:bg-gray-800" />
+                        class="w-full h-32 object-cover bg-white dark:bg-gray-800" />
                     <p
                         class="text-gray-800 dark:text-gray-100 p-2 text-sm font-semibold flex justify-between items-center">
                         {{ $product->name }}
