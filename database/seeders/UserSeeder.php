@@ -13,16 +13,22 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::query()->create(attributes: [
-            'name' => 'Admin',
-            'email' => 'admin@bokitgrill.online',
-            'password' => bcrypt('password'),
-        ]);
+        $admin = User::query()->firstOrCreate(
+            ['email' => 'admin@bokitgrill.online'],
+            [
+                'name' => 'Admin',
+                'password' => bcrypt('password'),
+            ]
+        );
+        $admin->assignRole('super_admin');
 
-        User::query()->create(attributes: [
-            'name' => 'Stéphane Kuma',
-            'email' => 'kumastephane@gmail.com',
-            'password' => bcrypt('super'),
-        ]);
+        $stephane = User::query()->firstOrCreate(
+            ['email' => 'kumastephane@gmail.com'],
+            [
+                'name' => 'Stéphane Kuma',
+                'password' => bcrypt('super'),
+            ]
+        );
+        $stephane->assignRole('super_admin');
     }
 }
